@@ -304,14 +304,53 @@ End of comment-->
             <img src="image/calender%20design.png" alt="">
         </div>
 
-        <form action="">
+        <form action="https://formspree.io/f/xgvepjld" method="POST">
             <h3>Book Appointment</h3>
-            <input type="text" placeholder="Name" class="box" id="namey">
-            <input type="number" placeholder="Number" class="box" id="numy">
-            <input type="email" placeholder="Email" class="box" id="emaily">
-            <input type="date" class="box" id="datey">
-            <button onclick="writedata()"  class="btn" >Book Now</button>
+            <input type="text" name="name" placeholder="Name" class="box" id="namey" required>
+            <input type="number" name="number" placeholder="Phone Number" class="box" id="numy" required>
+            <input type="email" name="email" placeholder="Email" class="box" id="emaily" required>
+            <input type="date" name="appointmentDate" class="box" id="datey" required>
+            <select name="appointmentTime" class="box" id="timey" required>
+                <option value="">Select Time</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="09:30">09:30 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="10:30">10:30 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="01:00">01:00 PM</option>
+                <option value="01:30">01:30 PM</option>
+                <option value="02:00">02:00 PM</option>
+                <option value="02:30">02:30 PM</option>
+                <option value="03:00">03:00 PM</option>
+                <option value="03:30">03:30 PM</option>
+                <option value="04:00">04:00 PM</option>
+                <option value="04:30">04:30 PM</option>
+                <option value="05:00">05:00 PM</option>
+            </select>
+            <select name="appointmentType" class="box" id="apptType" required>
+                <option value="">Select Service</option>
+                <option value="Consultation">Consultation</option>
+                <option value="Follow-up">Follow-up</option>
+                <option value="New Patient">New Patient</option>
+            </select>
+
+            <select name="location" class="box" id="locationy" required onchange="toggleAddressField()">
+                <option value="">Select Meeting Type</option>
+                <option value="In-Person">In Person</option>
+                <option value="Virtual Meet-Up">Virtual Meet-Up</option>
+                <option value="Phone Call">Phone Call</option>
+            </select>
+            <!-- Address field (hidden by default) -->
+            <div id="addressField" style="display:none;">
+                <input type="text" name="address" placeholder="Enter Address" class="box" id="address" required/>
+            </div>
+            <textarea name="message" placeholder="Additional Notes" class="box" id="messagey"></textarea>
+            <button type="submit" class="btn">Book Now</button>
         </form>
+
 
     </div>
 </section>
@@ -579,9 +618,19 @@ End of comment-->
 </script>
 
 <script>
+    function toggleAddressField() {
+        var location = document.getElementById("locationy").value;
+        var addressField = document.getElementById("addressField");
 
+        // Show address input if "In-Person" is selected, otherwise hide it
+        if (location === "In-Person") {
+            addressField.style.display = "block";
+        } else {
+            addressField.style.display = "none";
+        }
+    }
     // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
-   
+
     const firebaseConfig = {
       apiKey: "AIzaSyA-ACrjmac9Zd7Ll3NvTwU3cAuTiqKHA8Q",
       authDomain: "medicare-50e56.firebaseapp.com",
@@ -590,7 +639,7 @@ End of comment-->
       messagingSenderId: "458488532704",
       appId: "1:458488532704:web:bee5e0e443c06258564a85"
     };
-  
+
 
     const app = initializeApp(firebaseConfig);
     function writedata(){
