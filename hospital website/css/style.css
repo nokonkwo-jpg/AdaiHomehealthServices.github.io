@@ -113,6 +113,56 @@ section:nth-child(even){
     color: var(--green);
 }
 
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent; /* No background change */
+    color: #5e4b8b; /* Purple font color */
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    color: #4a3c72; /* Darker purple for hover effect */
+}
+
+/* Dropdown Content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white; /* Background remains neutral */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+/* Links inside dropdown */
+.dropdown-content a {
+    color: #5e4b8b; /* Purple font color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    color: #4a3c72; /* Darker purple on hover */
+    background-color: transparent; /* No background change */
+}
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
 #menu-btn{
     font-size: 2.5rem;
     border-radius: .5rem;
@@ -310,6 +360,78 @@ section:nth-child(even){
     box-shadow: var(--box-shadow);
 }
 
+/* How it works section */
+.how-it-works {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding-top: 5rem;
+}
+
+.how-it-works .step {
+    background: #fff;
+    border-radius: .5rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding: 3rem;
+    flex: 1 1 30rem;
+    margin: 1rem;
+}
+
+.how-it-works .step i {
+    font-size: 4rem;
+    color: var(--green);
+    padding-bottom: 1rem;
+}
+
+.how-it-works .step h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+    padding-bottom: 1rem;
+    text-shadow: var(--text-shadow);
+}
+
+.how-it-works .step p {
+    font-size: 1.6rem;
+    color: var(--light-color);
+    line-height: 1.8;
+}
+
+/* media queries */
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .how-it-works {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .how-it-works .step {
+        flex: 1 1 100%;
+        margin-bottom: 2rem;
+    }
+}
+/* Payment Information Section */
+.payment-info {
+    background: #fff;
+    padding: 2rem 3rem;
+    text-align: center;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    margin-top: 3rem;
+}
+
+.payment-info p {
+    font-size: 1.7rem;
+    color: var(--black);
+    font-weight: 500;
+}
 .book .row{
     display: flex;
     align-items: center;
@@ -412,6 +534,193 @@ section:nth-child(even){
     width: 120%;
     z-index: -1;
 }
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonials .heading {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.testimonials .heading span {
+    color: #774487FF; /* Purple color for the span */
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: left;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.testimonial p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.testimonial h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial {
+        width: 80%;
+        margin: 20px 0;
+    }
+}
+
+
+
+/* resources section styling */
+.resources {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.resources .heading {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.resources .heading span {
+    color: #774487FF;
+}
+
+.resource-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.resource {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: left;
+}
+
+.resource h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.resource h3 a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.resource h3 a:hover {
+    color: #2a8fbd;
+}
+
+.resource p {
+    font-size: 14px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .resource-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.faq .heading {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.faq .heading span {
+    color: #8e44ad; /* Purple color */
+}
+
+.faq-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+.faq-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .faq-container {
+        width: 90%;
+    }
+
+    .faq-item {
+        padding: 15px;
+    }
+}
+
 
 .blogs .box-container{
     display: grid;
