@@ -140,7 +140,7 @@
 
         <div class="box">
             <i class="fas fa-user-md"></i>
-            <h3>Physical Therapy</h3>
+            <h3>Therapy</h3>
             <p>Our physical therapists provide essential home care, helping patients regain movement and manage pain. Through
                 personalized treatment plans, we use exercises and techniques to improve mobility and enhance quality of life.</p>
             <a href="hospital%20website/dental.html" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
@@ -617,6 +617,8 @@ End of comment-->
 </script>
 
 <script>
+    history.pushState({}, '', '/'); // Updates the URL to "/"
+
     function toggleAddressField() {
         var location = document.getElementById("locationy").value;
         var addressField = document.getElementById("addressField");
